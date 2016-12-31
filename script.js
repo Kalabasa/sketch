@@ -20,7 +20,12 @@ new Processing(document.getElementById("canvas"), function(P) {
 
 	P.setup = function() {
 		P.size(600, 600);
+		P.cursor(P.HAND);
 	};
+
+	P.mouseClicked = function() {
+		explode(P.mouseX, P.mouseY, 100, 255);
+	}
 
 	P.draw = function() {
 		P.background(Math.floor(Math.min(particles.length / 400, 1) * 16));
